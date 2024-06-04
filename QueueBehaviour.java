@@ -1,6 +1,6 @@
 public interface QueueBehaviour {
 
-    void takeInQueue(Actor actor);
+    void takeInQueue(Actor actor); //встал в очередь
 
     void takeOrders();// сделать заказ
 

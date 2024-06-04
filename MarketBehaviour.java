@@ -6,6 +6,6 @@ public interface MarketBehaviour {
 
     void releaseFromMarket(List<Actor> actors);//выходит из магазина
 
-    void update(int x);//обновление состояиния магазина
+    void update();//обновление состояиния магазина
 
 }

@@ -1,5 +1,7 @@
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Queue;
 
 // Реализовать класс Market и
 // все методы, которые он
@@ -16,49 +18,63 @@ import java.util.List;
 public class Market implements MarketBehaviour, QueueBehaviour{
 
     private List<Actor> actors = new ArrayList<Actor>();
-
+    
     @Override
     public void acceptToMarket(Actor actor) {
-        actors.add(actor);
+        if(actor.isMakeOrder){
+        takeOrders();
+        } else {
+        System.out.println(actors.get(0).getName() + " Такого заказа нет");
+        }
     }
-
+        
     @Override
     public void releaseFromMarket(List<Actor> actors) {
         actors.remove(0);
+        update();
     }
 
     @Override
-    public void update(int x) {
-        
-        // добавить аргумент
-        // создать список прордуктов
-        // либо удалять либо 
-        
+    public void update() {
+        if(!actors.isEmpty()){
+        acceptToMarket(actors.get(0));
+        releaseFromMarket(actors);
+
+        }else{
+        System.out.println("Очередь пуста");
+        }
+
     }
 
     @Override
     public void giveOrders() {
-        // TODO Auto-generated method stub
-        
+        System.out.println(actors.get(0).getName()+" Ваш заказ готов");
+        releaseFromQueue();
     }
 
     @Override
-    public void releaseFromQueue() {
-        // TODO Auto-generated method stub
+    public void takeOrders() {
+        System.out.println(actors.get(0).getName()+" Ваш заказ принят");
+        giveOrders();
         
     }
 
     @Override
     public void takeInQueue(Actor actor) {
-        // TODO Auto-generated method stub
+        actors.add(actor);
+        System.out.println(actor.getName() + " встал в очередь");
         
     }
 
     @Override
-    public void takeOrders() {
-        // берём первый заказ из списка и удалить его
+    public void releaseFromQueue() {
+        System.out.println(actors.get(0).getName()+" До свидания!");
         
     }
+
+    
+
+    
 
     
 

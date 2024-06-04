@@ -1,17 +1,20 @@
 public class Human extends Actor {
 
-    public Human(String name) {
-        super(name);
+    public Human(String name, boolean isMakeOrder) {
+        this.name = name;
+        this.isMakeOrder = isMakeOrder;
+    }
+
+    //public static int count = 0;
+
+    @Override
+    public void setMakeOrder() {
+        this.isMakeOrder = true;
     }
 
     @Override
-    public void setMakeOrder(boolean fag) {
-        this.isMakeOrder = fag;
-    }
-
-    @Override
-    public void setTakeOrder(boolean fag) {
-        this.isTakeOrder = fag;
+    public void setTakeOrder() {
+        this.isTakeOrder = true;
     }
 
     @Override

@@ -9,12 +9,8 @@
 public abstract class Actor implements ActorBehavoir {
 
     protected String name;
-    protected boolean isMakeOrder;
-    protected boolean isTakeOrder;
-
-    public Actor(String name){
-        this.name = name;
-    }
+    protected boolean isMakeOrder; //готов сделать заказ
+    protected boolean isTakeOrder; //сделал заказ
 
     public abstract String getName();
 

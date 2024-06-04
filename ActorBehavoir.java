@@ -3,9 +3,9 @@
  */
 public interface ActorBehavoir {
 
-    void setMakeOrder(boolean fag);
+    void setMakeOrder();
 
-    void setTakeOrder(boolean fag);
+    void setTakeOrder();
 
     boolean isMakeOrder();
 
