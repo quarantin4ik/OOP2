@@ -5,8 +5,6 @@ public class Human extends Actor {
         this.isMakeOrder = isMakeOrder;
     }
 
-    //public static int count = 0;
-
     @Override
     public void setMakeOrder() {
         this.isMakeOrder = true;

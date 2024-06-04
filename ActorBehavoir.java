@@ -1,6 +1,3 @@
-/**
- * ActorBehavoir
- */
 public interface ActorBehavoir {
 
     void setMakeOrder();

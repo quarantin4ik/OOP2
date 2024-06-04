@@ -1,7 +1,5 @@
-import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Queue;
 
 // Реализовать класс Market и
 // все методы, которые он
@@ -23,7 +21,8 @@ public class Market implements MarketBehaviour, QueueBehaviour{
     public void acceptToMarket(Actor actor) {
         if(actor.isMakeOrder){
         takeOrders();
-        } else {
+        } 
+        else {
         System.out.println(actors.get(0).getName() + " Такого заказа нет");
         }
     }
@@ -39,8 +38,8 @@ public class Market implements MarketBehaviour, QueueBehaviour{
         if(!actors.isEmpty()){
         acceptToMarket(actors.get(0));
         releaseFromMarket(actors);
-
-        }else{
+        }
+        else{
         System.out.println("Очередь пуста");
         }
 
@@ -48,13 +47,13 @@ public class Market implements MarketBehaviour, QueueBehaviour{
 
     @Override
     public void giveOrders() {
-        System.out.println(actors.get(0).getName()+" Ваш заказ готов");
+        System.out.println(actors.get(0).getName()+" Забрал заказ");
         releaseFromQueue();
     }
 
     @Override
     public void takeOrders() {
-        System.out.println(actors.get(0).getName()+" Ваш заказ принят");
+        System.out.println(actors.get(0).getName()+" Сделал заказ");
         giveOrders();
         
     }
@@ -62,22 +61,13 @@ public class Market implements MarketBehaviour, QueueBehaviour{
     @Override
     public void takeInQueue(Actor actor) {
         actors.add(actor);
-        System.out.println(actor.getName() + " встал в очередь");
+        System.out.println(actor.getName() + " Встал в очередь");
         
     }
 
     @Override
     public void releaseFromQueue() {
-        System.out.println(actors.get(0).getName()+" До свидания!");
+        System.out.println(actors.get(0).getName()+" Покинул очередь");
         
     }
-
-    
-
-    
-
-    
-
-
-
 }

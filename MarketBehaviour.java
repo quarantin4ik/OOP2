@@ -2,10 +2,10 @@ import java.util.List;
 
 public interface MarketBehaviour {
 
-    void acceptToMarket(Actor actor);//входит в магазин
+    void acceptToMarket(Actor actor);
 
-    void releaseFromMarket(List<Actor> actors);//выходит из магазина
+    void releaseFromMarket(List<Actor> actors);
 
-    void update();//обновление состояиния магазина
+    void update();
 
 }
